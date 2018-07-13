@@ -1,0 +1,12 @@
+<pre>
+<p>
+  Server ID:{{serverId}}
+  Server Status:{{serverStatus}}
+</p>
+</pre>
+<p [ngStyle]="{color:getColor()}" *ngIf="serverStatus=='Offline';else serverOffline">Cannot access server</p>
+<button class="btn btn-primary" (click)="changeServerStatus()">{{buttonText}}</button>
+<ng-template #serverOffline>
+    <p [ngStyle]="{color:getColor()}">Server available</p>
+</ng-template>
+
